@@ -10,12 +10,7 @@ class Router
     puts "Welcome to Food Delivery Livecode APP"
     puts "--------"
     while @running
-      puts "1. Add a new meal"
-      puts "2. List all meals"
-      puts "3. Add a new customer"
-      puts "4. List all customers"
-      puts "9. quit"
-      print "> "
+      display_menu
       action = gets.chomp
       route_action(action)
     end
@@ -29,5 +24,14 @@ class Router
     when "4" then @customers_controller.list
     when "9" then @running = false
     end
+  end
+
+  def display_menu
+    puts "1. Add a new meal"
+    puts "2. List all meals"
+    puts "3. Add a new customer"
+    puts "4. List all customers"
+    puts "9. quit"
+    print "> "
   end
 end
